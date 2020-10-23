@@ -47,7 +47,6 @@ export default function SignInState({}: Props): ReactElement {
 
                 </fieldset>
             </form>
-            <br/>
             <hr></hr>
 
             <Link to="/sign-up" ><strong>Create account</strong></Link>
