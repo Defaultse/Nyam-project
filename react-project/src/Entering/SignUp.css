@@ -9,7 +9,6 @@ div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(6, 40, 150);
   }
   
   .form-wrapper {
