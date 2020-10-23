@@ -34,6 +34,7 @@ export default function SignInState({}: Props): ReactElement {
         email.current?.focus();
     }, [])
     return(
+        <>
         <div className="form-style-5">
             <form>
                 <fieldset>
@@ -46,7 +47,10 @@ export default function SignInState({}: Props): ReactElement {
 
                 </fieldset>
             </form>
+            <hr></hr>
+            <Link to="/sign-up" ><strong>Create account</strong></Link>
         </div>
+        </>
     )
     
 }; 
