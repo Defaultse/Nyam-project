@@ -2,6 +2,9 @@ import Axios from 'axios';
 import React, { ReactElement, useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import Lot from './Lot'
+
+import './Craigslist.css'
+
 interface Props {
     
 }

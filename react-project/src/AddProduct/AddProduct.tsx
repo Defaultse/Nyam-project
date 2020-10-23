@@ -1,12 +1,21 @@
-import React, { ReactElement, useState } from 'react'
-
+import React, { ReactElement, useState, useRef, useEffect } from 'react'
 import Axios from 'axios';
+
+import './AddProduct.css';
 
 interface Props {
     
 }
 
+interface Product{
+    title: string,
+    description: string,
+    price: number
+}
+
 export default function AddProduct({}: Props): ReactElement {
+    // let product: Product = {title:"", description:"", price: 0}
+
     const [productTitle, setProductTitle] = useState("")
     const [productCategory, setProductCategory] = useState("")
     const [productPrice, setProductPrice] = useState("")
@@ -24,43 +33,69 @@ export default function AddProduct({}: Props): ReactElement {
     });
     };
 
+    function validateInput(){
+        let validated = true;
+        if(!productTitle ||productTitle===" "||productTitle===""){
+          alert("Re-enter title")
+          validated=false;
+          title.current?.focus()
+        }
+        if(productDescription.length>30==true){
+          alert("Re-enter description")
+          validated=false;
+          description.current?.focus()
+        }
+        if(!productPrice){
+            alert("Re-enter price")
+            validated=false;
+            price.current?.focus()
+        }
+        if(validated){
+            handleSubmit();
+        }
+      }
+
+    const title = useRef<HTMLInputElement>(null)
+    const price = useRef<HTMLInputElement>(null);
+    const description = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        title.current?.focus();
+    }, [])
 
     return (
-        <div>
-            <h1>Adding a product</h1>
-            
-            <div className="form">
-                <label>Title</label>
-                <input type="text" name="title" onChange={(e)=>{
-                    setProductTitle(e.target.value)
-                }}/>
+        <div className="form-style-5">
+            <form>
+                <fieldset>
+                    <label>Title</label>
+                    <input type="text" name="title" onChange={(e)=>{
+                    setProductTitle(e.target.value)}}
+                    ref={title}/>
 
-                <label>Set category</label>
-                <select onChange={(e)=>{
+                    <label>Set category</label>
+                    <select onChange={(e)=>{
                     setProductCategory(e.target.value)
-                }}>
+                     }}>
+
                         <option value="bread">Bread</option>
                         <option value="cakes">Cakes</option>
                         <option value="else">Something else</option>
-                </select>
-                {/* <input type="text" name="category" onChange={(e)=>{
-                    setProductCategory(e.target.value)
-                }}/> */}
+                    </select>
+                    
+                    <label>Price</label>
+                    <input type="text" name="price" onChange={(e)=>{
+                    setProductPrice(e.target.value)}}
+                    ref={price}/>
 
-                <label>Price</label>
-                <input type="text" name="price" onChange={(e)=>{
-                    setProductPrice(e.target.value)
-                }}/>
+                    <label>Description</label>
+                    <textarea name="description" onChange={(e)=>{
+                    setProductDescription(e.target.value);}}
+                     />
 
+                <button onClick={()=>validateInput()}>Submit</button>
 
-                <label>Description</label>
-                <textarea name="description" onChange={(e)=>{
-                    setProductDescription(e.target.value)
-                }}/>
-
-                <button onClick={handleSubmit}>Submit</button>
-
-            </div>
+                </fieldset>
+            </form>
         </div>
     )
 }

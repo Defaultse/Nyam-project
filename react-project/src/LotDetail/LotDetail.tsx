@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import React, { ReactElement, useEffect, useState } from 'react'
-
+import './LotDetail.css'
 interface Props {
     match: any;
 }
@@ -16,13 +16,23 @@ export default function LotDetail({match}: Props): ReactElement {
     },[]);
 
     return (
-        <div>
+        <>
+        <div className="container">
             {
                 productList.map(product=>{
                     if(product.id==match.params.id && product.status!=true) 
-                return <div>{product.id}{product.title}{product.price}{product.description}{product.category}</div>
+                return(
+                <div>
+                <h3>Product id:{product.id}</h3>
+                <h1>Title: {product.title}</h1>
+                <p>Category:{product.category}</p>
+                <p>Price: {product.price}</p>
+                <p>Description:{product.description}</p>
+                </div>)
+                
                 })
             }
         </div>
+        </>
     )
 }

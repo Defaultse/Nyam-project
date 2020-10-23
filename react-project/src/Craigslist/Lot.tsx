@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-
+import './Lot.css'
 interface Props {
     lot: Lot
 }
@@ -12,8 +12,10 @@ interface Lot{
 
 export default function Lot({lot}: Props): ReactElement {
         return(
-            <div>
-                <h2>{lot.id}{lot.title}{lot.price}</h2>
+            <div className="box">
+                 <img src="/images/cake.jpg"/>
+                 <em><h2>{lot.title}</h2></em>
+                 <strong><h3>{lot.price}KZT</h3></strong>
             </div>
             
         )

@@ -10,7 +10,7 @@ export default function NavBar({}: Props): ReactElement {
     return (
         <div className="nav">
             <ul>
-                <Link to="/">
+                <Link to="/" >
                     <li>List</li>
                 </Link>
                 <Link to="/recepies">

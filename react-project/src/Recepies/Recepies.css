@@ -1,0 +1,17 @@
+body{
+    background-image: url("/images/recepies.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+
+
+/* 
+
+.list{
+    background-image: url("/images/recepies.jpg");
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat, repeat;
+} */
