@@ -44,6 +44,11 @@ app.get('/api/get', (req,res) => {
     })
 });
 
+app.registration('/api/get/user'){
+    const sqlGet = "Select email FROM users_table";
+    db.query
+}
+
 app.listen(3001, ()=> {
     console.log('running port 3001')
 })
