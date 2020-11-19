@@ -1,35 +1,31 @@
-import React, { ReactElement } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
-import withDataFetching from './withDataFetching';
+import React, { ReactElement, useEffect } from 'react'
 
 interface Props {
-  results?: any[];
-  loading?: boolean;
-  error?: any;
+    
 }
 
-function Recepies({ loading, results, error }: Props): ReactElement {
-  let match = useRouteMatch();
+const APP_ID = "bcf72ecd";
+const APP_KEY = "3eba030c527845f34fe665899441bd71";
 
-  if (loading || error) {
-    return loading ? "Loading..." : error.message;
-  }
 
-  return (
-    <>
-      <ul>
-        {results &&
-          results.map(({ item_id, name }) => (
-            <Link to={`${match.url}/${item_id}`}>
-              <li key={item_id}>{name ? name.en : "no Name(("}</li>
-            </Link>
-          ))}
-      </ul>
-    </>
-  );
+export default function Recepies({}: Props): ReactElement { 
+
+useEffect(()=>{
+    getRecepies();
+}, [])
+
+const getRecepies = async() => {
+    const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`);
+    const data = await response.json();
+    console.log(data);
 }
 
-export default withDataFetching({
-  dataSource:
-    "http://census.daybreakgames.com/get/ps2/item?item_id=]1&c:limit=50&c:show=description.en,item_id,name.en,image_path",
-})(Recepies);
+    return (
+        <div>
+            <form>
+                <input type="text"/>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    )
+}

@@ -11,12 +11,9 @@ import { SignUp } from './Entering/SignUp';
 import SignIn  from './Entering/SignIn';
 import AddProduct from './AddProduct/AddProduct';
 import Craigslist from './Craigslist/Craigslist';
-import { ThemeContext, Theme } from './ThemeUse';
-import MyPage from './MyPages';
 
 function App() {
 
-  const [theme, setTheme] = React.useState(Theme.Light);
   // const isLogged = true;
 
   return (
@@ -25,13 +22,6 @@ function App() {
      {/* <Navbar isLogged={isLogged}/> */}
      <Navbar/>
       <Switch>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className="App">
-        <header className="App-header">
-          <MyPage />
-        </header>
-      </div>
-    </ThemeContext.Provider>
         <Route path='/sign-up' exact component={SignUp}/>
         <Route path='/sign-in' exact component={SignIn}/>
         <Route path='/log-out' exact component={SignIn}/>
