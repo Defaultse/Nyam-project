@@ -13,7 +13,7 @@ export default function NavBar({}: Props): ReactElement {
                 <Link to="/" >
                     <li>List</li>
                 </Link>
-                <Link to="/recepies">
+                <Link to="/recipes">
                     <li>New Recipes</li>
                 </Link>
                 <Link to="/add-product">

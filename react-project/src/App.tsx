@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import Navbar from './Navbar/Navbar';
-import Recepies from './Recepies/Recepies';
+import Recipes from './Recipes/Recipes';
 import Profile from './Profile/Profile';
 import LotDetail from './LotDetail/LotDetail';
 
@@ -28,7 +28,7 @@ function App() {
         <Route path='/' exact component={Craigslist}/>
         <Route path='/lots/:id' render={(props)=><LotDetail {...props}/>} />
         <Route path='/add-product' exact component={AddProduct}/>
-        <Route path='/recepies' exact component={Recepies}/>
+        <Route path='/recipes' exact component={Recipes}/>
         <Route path='/profile' exact component={Profile}/>
       </Switch>
 
