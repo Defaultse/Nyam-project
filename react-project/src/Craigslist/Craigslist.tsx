@@ -25,6 +25,7 @@ export default function Craigslist({}: Props): ReactElement {
     useEffect(()=>{
         Axios.get('http://localhost:3001/api/get').then((response: { data: any; })=>{
           setProductList(response.data)
+          // console.log(response.data)
         })
       },[]);
 
