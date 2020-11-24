@@ -19,9 +19,7 @@ const db = mysql.createPool({
     port: "3306",
     user: "root",
     password: "root",
-    database: "project",
-    // insecureAuth : true
-    // multipleStatements: true
+    database: "project"
 });
 
 app.post('/api/insert', (req,res) => {

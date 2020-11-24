@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import Navbar from './Navbar/Navbar';
 import Recipes from './Recipes/Recipes';
@@ -11,6 +10,8 @@ import { SignUp } from './Entering/SignUp';
 import SignIn  from './Entering/SignIn';
 import AddProduct from './AddProduct/AddProduct';
 import Craigslist from './Craigslist/Craigslist';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
