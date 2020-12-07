@@ -19,7 +19,7 @@ function App() {
 
   return (
    <Router>
-     <div className="container">
+     <>
      {/* <Navbar isLogged={isLogged}/> */}
      <Navbar/>
       <Switch>
@@ -33,7 +33,7 @@ function App() {
         <Route path='/profile' exact component={Profile}/>
       </Switch>
 
-      </div>
+      </>
     </Router>   
     // <SignUp/>
     // <SignIn/>

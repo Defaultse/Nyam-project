@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { stringify } from 'querystring';
 import React, { ReactElement, useState, useRef, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import './SignIn.css';
@@ -7,44 +8,38 @@ interface Props {
 
 }
 
-
 interface SignIn {
     email: string,
     password: string
 }
 
 export default function SignInState({}: Props): ReactElement {
+    const [enteredEmail,setEmailState] = useState("")
+    const [enteredPassword,setPasswordState] = useState("")
 
-    const [signinEmail,signinEmailState ] = useState("")
-    const [signinPassword,signinPasswordState ] = useState("")
-    const [PassFromDB, setPassFromDB] = useState("")
+    const [loginStatus, setLoginStatus] = useState("")
 
-    function validateInput(){
-        let validated = true;
-        if(!signinEmail ||signinEmail===" "||signinEmail===""){
-          alert("Re-enter email")
-          validated=false;
-          email.current?.focus()
-        }
-        if(validated){
-            Axios.get("http://localhost:3001/api/get/pass/"+signinEmail).then(response=>(
-                setPassFromDB(response.data)
-            ))
-            // if(PassFromDB==signinPassword){
-                alert(signinEmail);
-                alert(PassFromDB);
-                alert(signinPassword);
-            // }
-        }
-      }
+    const login = () => {
+        Axios.post("http://localhost:3001/login", {
+            email: enteredEmail,
+            password: enteredPassword,
+        }).then((response)=>{
+            if (response.data.message) {
+                setLoginStatus(response.data.message)
+                console.log("logged");
+            } else {
+                setLoginStatus(response.data[0].email)
+            }
+        });
+    };
 
     const email = useRef<HTMLInputElement>(null)
     const password = useRef<HTMLInputElement>(null);
 
-
     useEffect(() => {
         email.current?.focus();
     }, [])
+
     return(
         <>
         <div className="form-style-5">
@@ -52,16 +47,18 @@ export default function SignInState({}: Props): ReactElement {
                 <fieldset>
                     <label>email</label>
                     <input type="text" name="email" onChange={(e)=>{
-                    signinEmailState(e.target.value)}}
+                    setEmailState(e.target.value)}}
                     ref={email}/>
 
                     <label>Password</label>
                     <input type="text" name="title" onChange={(e)=>{
-                    signinPasswordState(e.target.value)}}
+                    setPasswordState(e.target.value)}}
                     ref={password}/>
+                    
 
-                <button onClick={()=>validateInput()}>Submit</button>
-
+                <button onClick={login}>Submit</button>
+                
+        <h1>{loginStatus}</h1>
                 </fieldset>
             </form>
             <hr></hr>

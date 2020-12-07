@@ -25,7 +25,6 @@ export default function Craigslist({}: Props): ReactElement {
     useEffect(()=>{
         Axios.get('http://localhost:3001/api/get').then((response: { data: any; })=>{
           setProductList(response.data)
-          // console.log(response.data)
         })
       },[]);
 
@@ -33,8 +32,8 @@ export default function Craigslist({}: Props): ReactElement {
     const lotList = productList.map(lot=><Link to={`lots/${lot.id}`}><Lot key={lot.id} lot={lot}></Lot></Link>)
    
     return (
-        <ul>
+        <div className="container">
             {lotList}
-        </ul>            
+        </div>       
     )
 }

@@ -64,38 +64,37 @@ export default function AddProduct({}: Props): ReactElement {
     }, [])
 
     return (
-        <div className="form-style-5">
-            <form>
-                <fieldset>
+            <form className="container">
+                <div className="form-group">
                     <label>Title</label>
-                    <input type="text" name="title" onChange={(e)=>{
+                    <input className="form-control" type="text" name="title" onChange={(e)=>{
                     setProductTitle(e.target.value)}}
                     ref={title}/>
-
+                </div>
+                <div className="form-group">
                     <label>Set category</label>
-                    <select onChange={(e)=>{
+                    <select className="form-control" onChange={(e)=>{
                     setProductCategory(e.target.value)
                      }}>
-
                         <option value="bread">Bread</option>
                         <option value="cakes">Cakes</option>
                         <option value="else">Something else</option>
                     </select>
-                    
+                </div>
+                <div className="form-group">
                     <label>Price</label>
-                    <input type="text" name="price" onChange={(e)=>{
+                    <input className="form-control" type="text" name="price" onChange={(e)=>{
                     setProductPrice(e.target.value)}}
                     ref={price}/>
-
+                </div>
+                <div className="form-group">
                     <label>Description</label>
-                    <textarea name="description" onChange={(e)=>{
+                    <textarea className="form-control" name="description" onChange={(e)=>{
                     setProductDescription(e.target.value);}}
                      />
+                </div>
+                <button className="btn btn-secondary" onClick={()=>validateInput()}>Submit</button>
 
-                <button onClick={()=>validateInput()}>Submit</button>
-
-                </fieldset>
             </form>
-        </div>
     )
 }

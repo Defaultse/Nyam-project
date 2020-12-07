@@ -46,23 +46,37 @@ app.get('/api/get', (req,res) => {
     })
 });
 
-app.get('/api/get/pass/:email', (req,res) => {
-    const email = req.params.email;
-    const sqlGet = "SELECT password FROM users_table WHERE email=?";
-    db.query(sqlGet, email ,(err,result) => {
-        if (err) console.log(err);
-    })
+app.post('/login', (req,res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    db.query(
+        "Select * FROM users_table WHERE email=?  AND password=?",
+        [email, password], 
+        (err, result) => {
+            if(err) {
+                res.send({err: err});
+            } 
+               
+            if (result.length > 0) {
+                res.send(result);
+            }
+            else {
+                res.send({message: "Wrong email/pass combination"});
+            }
+        }
+    );
 });
 
-// // app.put("/api/register-user", (req,res) => {
-// //     const name = req.body.userName;
-// //     const email = req.body.userEmail;
-// //     const pass = req.body.userPassword;
-// //     const sqlInsert = "INSERT INTO users_table (email, username, password) VALUES (?,?,?)";
-// //     db.query(sqlInsert, [email, name, pass], (err,result) => {
-// //         console.log(err)
-// //     })
-// // });
+// app.put("/api/register-user", (req,res) => {
+//     const name = req.body.userName;
+//     const email = req.body.userEmail;
+//     const pass = req.body.userPassword;
+//     const sqlInsert = "INSERT INTO users_table (email, username, password) VALUES (?,?,?)";
+//     db.query(sqlInsert, [email, name, pass], (err,result) => {
+//         console.log(err)
+//     })
+// });
 
 app.listen(3001, ()=> {
     console.log('running port 3001')
