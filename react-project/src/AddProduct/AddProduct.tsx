@@ -14,8 +14,8 @@ interface Product{
 }
 
 export default function AddProduct({}: Props): ReactElement {
-    // let product: Product = {title:"", description:"", price: 0}
-
+    const account = JSON.parse(localStorage.getItem('account')||'{}');
+    
     const [productTitle, setProductTitle] = useState("")
     const [productCategory, setProductCategory] = useState("")
     const [productPrice, setProductPrice] = useState("")
@@ -23,7 +23,7 @@ export default function AddProduct({}: Props): ReactElement {
 
     const handleSubmit = () => {
         Axios.post("http://localhost:3001/api/insert", {
-            productOwner:'1',
+            productOwner: account.id,
             productStatus: '0',
 
             productTitle: productTitle,
@@ -65,6 +65,7 @@ export default function AddProduct({}: Props): ReactElement {
 
     return (
             <form className="container">
+                {typeof(account)}
                 <div className="form-group">
                     <label>Title</label>
                     <input className="form-control" type="text" name="title" onChange={(e)=>{

@@ -19,7 +19,7 @@ export default function SignInState(): ReactElement {
             if (response.data.message) {
                 alert("Some Error")
             } else {
-                localStorage.setItem('email', JSON.stringify(response.data[0].email));
+                localStorage.setItem('account', JSON.stringify(response.data[0]));
                 dispatch({type: Logged.SIGN_IN })
                 window.location.replace('/profile')
             }
@@ -31,7 +31,7 @@ export default function SignInState(): ReactElement {
 
     useEffect(()=>{
         email.current?.focus();
-    })
+    }, [])
 
     return(
         <>

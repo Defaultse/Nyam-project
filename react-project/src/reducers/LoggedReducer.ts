@@ -8,7 +8,7 @@ const loggedReducer = (
                 return true;
 
             case Logged.SIGN_OUT:
-                localStorage.setItem('email', "");
+                localStorage.removeItem('account');
                 return false;
             
             default:

@@ -1,18 +1,18 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 
 export default function Profile(): ReactElement {
-    const account = localStorage.getItem('email');
-   
+    const account = JSON.parse(localStorage.getItem('account')||'{}');
+
     return (
         <div>
-            <h1>{account}</h1>
             <div>
-               Profile Info
+               Profile Info:
                <h1>Profile picture</h1>
             </div>
             <hr/>
             <div>
-                Здесь должны быть товары пользователя
+                Entered User:
+                <h5>{account.email}</h5>
             </div>
             
             
