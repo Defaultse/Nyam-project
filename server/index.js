@@ -57,9 +57,9 @@ app.post('/login', (req,res) => {
             if(err) {
                 res.send({err: err});
             } 
-               
             if (result.length > 0) {
                 res.send(result);
+                console.log(result)
             }
             else {
                 res.send({message: "Wrong email/pass combination"});

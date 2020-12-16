@@ -1,13 +1,15 @@
 import React, { ReactElement } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
+import { Logged } from '../reducers/Logged';
 
 // import './Navbar.css';
 
-interface Props {
-    // isLogged: boolean,
-}
 
-export default function NavBar({}: Props): ReactElement {
+export default function NavBar(): ReactElement {
+  const logged = useSelector((state: any) => state.isLogged);
+  const dispatch = useDispatch();
+
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">Nyam Nyam</a>
@@ -19,50 +21,16 @@ export default function NavBar({}: Props): ReactElement {
     <ul className="navbar-nav">
         <Link className="nav-item" to="/" ><li>List</li></Link>
         <Link className="nav-item" to="/recipes"><li>New Recipes</li></Link>
-        <Link className="nav-item" to="/add-product"><li>Add Product</li></Link>
-        <Link className="nav-item" to="/profile"><li>Profile</li></Link>
-        <Link className="nav-item" to="/sign-in"><li>Sign in</li></Link>
+        {logged ? (
+          <>
+          <Link className="nav-item" to="/add-product"><li>Add Product</li></Link>
+          <Link className="nav-item" to="/profile"><li>Profile</li></Link>
+          <Link onClick={()=>dispatch({type: Logged.SIGN_OUT})} className="nav-item" to="/sign-in"><li>Sign Out</li></Link></>
+        ) : (
+          <Link className="nav-item" to="/sign-in"><li>Sign in</li></Link>
+        ) }
   </ul>
   </div>
 </nav>
     )
-    // if(isLogged==false){
-    //     return (
-    //         <div className="nav">
-    //             <ul>
-    //                 <Link to="/lots">
-    //                     <li>Main</li>
-    //                 </Link>
-    //                 <Link to="/recepies">
-    //                     <li>New Recipes</li>
-    //                 </Link>
-    //                 <Link to="/sign-in">
-    //                     <li>Sign in</li>
-    //                 </Link>
-    //             </ul>
-    //         </div>
-    //     )
-    // }
-
-    // else {
-    //     return (
-    //         <div className="nav">
-    //             <ul>
-    //                 <Link to="/lots">
-    //                     <li>Main</li>
-    //                 </Link>
-    //                 <Link to="/recepies">
-    //                     <li>New Recipes</li>
-    //                 </Link>
-    //                 <Link to="/profile">
-    //                     <li>Profile</li>
-    //                 </Link>
-    //                 <Link to="/log-out">
-    //                     <li>Log out</li>
-    //                 </Link>
-    //             </ul>
-    //         </div>
-    //     )
-    // }
-    
 }

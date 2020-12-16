@@ -48,7 +48,7 @@ export class SignUp extends React.Component<SignUpProps, SignUpState>
         Object.values(this.state.errors).forEach(
             (val) => val.length > 0 && (validity = false)
         );
-        if (validity == true) {
+        if (validity === true) {
             console.log("Registering can be done");
         } else {
             console.log("You cannot be registered!!!")

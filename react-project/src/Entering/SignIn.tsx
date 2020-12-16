@@ -1,34 +1,27 @@
 import Axios from 'axios';
 import { stringify } from 'querystring';
 import React, { ReactElement, useState, useRef, useEffect } from 'react'
+import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
+import { Logged } from '../reducers/Logged';
 import './SignIn.css';
 
-interface Props {
-
-}
-
-interface SignIn {
-    email: string,
-    password: string
-}
-
-export default function SignInState({}: Props): ReactElement {
+export default function SignInState(): ReactElement {
     const [enteredEmail,setEmailState] = useState("")
     const [enteredPassword,setPasswordState] = useState("")
-
-    const [loginStatus, setLoginStatus] = useState("")
-
+    const dispatch = useDispatch()
+    
     const login = () => {
         Axios.post("http://localhost:3001/login", {
             email: enteredEmail,
             password: enteredPassword,
         }).then((response)=>{
             if (response.data.message) {
-                setLoginStatus(response.data.message)
-                console.log("logged");
+                alert("Some Error")
             } else {
-                setLoginStatus(response.data[0].email)
+                // response.data[0].email
+                dispatch({type: Logged.SIGN_IN})
+                window.location.replace('/profile')
             }
         });
     };
@@ -57,8 +50,6 @@ export default function SignInState({}: Props): ReactElement {
                     
 
                 <button onClick={login}>Submit</button>
-                
-        <h1>{loginStatus}</h1>
                 </fieldset>
             </form>
             <hr></hr>

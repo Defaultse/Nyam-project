@@ -1,10 +1,6 @@
 import React, { ReactElement } from 'react'
 
-interface Props {
-    
-}
-
-export default function Profile({}: Props): ReactElement {
+export default function Profile(): ReactElement {
     return (
         <div>
             <div>
