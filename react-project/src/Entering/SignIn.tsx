@@ -10,7 +10,7 @@ export default function SignInState(): ReactElement {
     const [enteredEmail,setEmailState] = useState("")
     const [enteredPassword,setPasswordState] = useState("")
     const dispatch = useDispatch()
-    
+
     const login = () => {
         Axios.post("http://localhost:3001/login", {
             email: enteredEmail,
@@ -19,8 +19,8 @@ export default function SignInState(): ReactElement {
             if (response.data.message) {
                 alert("Some Error")
             } else {
-                // response.data[0].email
-                dispatch({type: Logged.SIGN_IN})
+                localStorage.setItem('email', JSON.stringify(response.data[0].email));
+                dispatch({type: Logged.SIGN_IN })
                 window.location.replace('/profile')
             }
         });
@@ -29,9 +29,9 @@ export default function SignInState(): ReactElement {
     const email = useRef<HTMLInputElement>(null)
     const password = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
+    useEffect(()=>{
         email.current?.focus();
-    }, [])
+    })
 
     return(
         <>

@@ -14,3 +14,4 @@ const allReducers = combineReducers({
 })
 
 export default persistReducer(persistConfig, allReducers);
+// export default allReducers
