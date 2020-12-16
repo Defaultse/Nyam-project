@@ -1,12 +1,7 @@
-import React, { ReactElement, useEffect, useState } from 'react';
-import { receiveMessageOnPort } from 'worker_threads';
+import React, { ReactElement, useEffect, useState } from 'react'
 import Recipe from './Recipe';
 
-interface Props {
-    
-}
-
-export default function Recipes({}: Props): ReactElement { 
+export default function Recipes(): ReactElement { 
     const APP_ID = "bcf72ecd";
     const APP_KEY = "3eba030c527845f34fe665899441bd71";
 

@@ -68,15 +68,17 @@ app.post('/login', (req,res) => {
     );
 });
 
-// app.put("/api/register-user", (req,res) => {
-//     const name = req.body.userName;
-//     const email = req.body.userEmail;
-//     const pass = req.body.userPassword;
-//     const sqlInsert = "INSERT INTO users_table (email, username, password) VALUES (?,?,?)";
-//     db.query(sqlInsert, [email, name, pass], (err,result) => {
-//         console.log(err)
-//     })
-// });
+app.post("/register-user", (req,res) => {
+    const name = req.body.username;
+    const email = req.body.email;
+    const pass = req.body.password;
+    console.log(name+' '+email+' '+pass)
+    const sqlInsert = "INSERT INTO users_table (email, username, password) VALUES (?,?,?)";
+    db.query(sqlInsert, [email, name, pass], (err,result) => {
+        res.send(result)
+        console.log(err)
+    })
+});
 
 app.listen(3001, ()=> {
     console.log('running port 3001')

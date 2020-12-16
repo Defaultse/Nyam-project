@@ -6,7 +6,7 @@ import Profile from './Profile/Profile';
 import LotDetail from './LotDetail/LotDetail';
 
 
-import { SignUp } from './Entering/SignUp';
+import SignUp from './Entering/SignUp';
 import SignIn  from './Entering/SignIn';
 import AddProduct from './AddProduct/AddProduct';
 import Craigslist from './Craigslist/Craigslist';

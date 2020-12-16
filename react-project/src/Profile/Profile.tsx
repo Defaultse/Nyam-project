@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement} from 'react'
 
 export default function Profile(): ReactElement {
     const account = JSON.parse(localStorage.getItem('account')||'{}');

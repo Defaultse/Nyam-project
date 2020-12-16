@@ -5,11 +5,7 @@ import Lot from './Lot'
 
 import './Craigslist.css'
 
-interface Props {
-    
-}
-
-export default function Craigslist({}: Props): ReactElement {
+export default function Craigslist(): ReactElement {
     // const lots = [
     //     {
     //         id:1, idSeller: 2324, title: "Bicycle", price: 40000, discription:"Brand new bicycle", sold: false

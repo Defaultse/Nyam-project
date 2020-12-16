@@ -20,7 +20,7 @@ export default function LotDetail({match}: Props): ReactElement {
         <div className="container">
             {
                 productList.map(product=>{
-                    if(product.id==match.params.id && product.status!=true) 
+                    if(product.id==match.params.id && product.status!==true) 
                 return(
                 <div>
                 <h3>Product id:{product.id}</h3>
