@@ -4,7 +4,7 @@ import Navbar from './Navbar/Navbar';
 import Recipes from './Recipes/Recipes';
 import Profile from './Profile/Profile';
 import LotDetail from './LotDetail/LotDetail';
-
+import './App.css'; 
 
 import SignUp from './Entering/SignUp';
 import SignIn  from './Entering/SignIn';

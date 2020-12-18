@@ -1,12 +1,13 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 import Recipe from './Recipe';
+import "./Recipes.css"; 
 
 export default function Recipes(): ReactElement { 
     const APP_ID = "bcf72ecd";
     const APP_KEY = "3eba030c527845f34fe665899441bd71";
 
     const [recipes, setRecipes] = useState<any[]>([]);
-    const [search, setSearch] = useState("");
+    const [search, setSearch] = useState("");  
     const [query, setQuery] = useState("chicken");
 
     useEffect(()=>{ 
