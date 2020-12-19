@@ -1,4 +1,5 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement, useEffect, useMemo, useState } from 'react'
+import { ObjectFlags } from 'typescript';
 import Recipe from './Recipe';
 
 export default function Recipes(): ReactElement { 
@@ -26,6 +27,7 @@ export default function Recipes(): ReactElement {
         setSearch('');
     }
 
+    // if (Object.keys(recipes).length===0) throw new Error("");
     return (
         <div>
             <form onSubmit={getSearch}>
@@ -42,5 +44,5 @@ export default function Recipes(): ReactElement {
                 />
             ))}
         </div>
-    )
+    );
 }

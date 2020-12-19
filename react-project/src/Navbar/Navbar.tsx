@@ -21,6 +21,7 @@ export default function NavBar(): ReactElement {
     <ul className="navbar-nav">
         <Link className="nav-item" to="/" ><li>List</li></Link>
         <Link className="nav-item" to="/recipes"><li>New Recipes</li></Link>
+        <Link className="nav-item" to="/favorites"><li>Fovorites</li></Link>
         {logged===true ? (
           <>
           <Link className="nav-item" to="/add-product"><li>Add Product</li></Link>

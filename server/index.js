@@ -46,6 +46,25 @@ app.get('/api/get', (req,res) => {
     })
 });
 
+app.post('/api/get/product', (req,res) => {
+    const product_id = req.body.product_id;
+    const sqlGet = "SELECT * FROM products_table WHERE id=?";
+    console.log('ok')
+    db.query(sqlGet, [product_id], (err, result)=>{
+        res.send(result)
+        console.log(result)
+    })
+})
+
+app.post('/api/getUserProducts', (req,res) => {
+    const owner_id = req.body.owner_id;
+    const sqlGet = "SELECT * FROM products_table WHERE owner_id=?";
+    db.query(sqlGet, [owner_id], (err, result)=>{
+        res.send(result)
+        console.log(result)
+    })
+})
+
 app.post('/login', (req,res) => {
     const email = req.body.email;
     const password = req.body.password;

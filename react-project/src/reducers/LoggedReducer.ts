@@ -5,6 +5,7 @@ const loggedReducer = (
     action: {type: Logged}) => {
         switch (action.type) {
             case Logged.SIGN_IN:
+                localStorage.setItem('favorites', JSON.stringify([]));
                 return true;
 
             case Logged.SIGN_OUT:
