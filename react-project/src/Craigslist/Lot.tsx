@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useState } from 'react'
 import './Lot.css'
 interface Props {
     lot: Lot
@@ -11,7 +11,8 @@ interface Lot{
 }
 
 export default function Lot({lot}: Props): ReactElement {
-        return(
+    // if (Math.random()*10<2) throw new Error();
+    return(
             <div className="card mb-3">
                  {/* <img src="/images/cake.jpg" className="card-img-top"/> */}
                  <div className="card-body">

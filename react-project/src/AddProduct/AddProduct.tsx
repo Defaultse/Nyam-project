@@ -25,7 +25,6 @@ export default function AddProduct({}: Props): ReactElement {
         Axios.post("http://localhost:3001/api/insert", {
             productOwner: account.id,
             productStatus: '0',
-
             productTitle: productTitle,
             productCategory: productCategory,
             productPrice: productPrice,
@@ -65,7 +64,6 @@ export default function AddProduct({}: Props): ReactElement {
 
     return (
             <form className="container">
-                {typeof(account)}
                 <div className="form-group">
                     <label>Title</label>
                     <input className="form-control" type="text" name="title" onChange={(e)=>{

@@ -1,9 +1,10 @@
 import Axios from 'axios';
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { lazy, ReactElement, useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Lot from './Lot'
-
+// const Lot = lazy(()=>import('./Lot'));
 import './Craigslist.css'
+import ErrorBoundary from '../ErrorBoundary';
 
 export default function Craigslist(): ReactElement {
     // const lots = [
@@ -21,15 +22,17 @@ export default function Craigslist(): ReactElement {
     useEffect(()=>{
         Axios.get('http://localhost:3001/api/get').then((response: { data: any; })=>{
           setProductList(response.data)
-        })
-      },[]);
+      })
+    },[]);
 
 
     const lotList = productList.map(lot=><Link to={`lots/${lot.id}`}><Lot key={lot.id} lot={lot}></Lot></Link>)
-   
+
     return (
         <div className="container">
-            {lotList}
+          <ErrorBoundary>
+          {lotList}
+          </ErrorBoundary>
         </div>       
     )
 }
