@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
-
+import './SignUp.css'
 export default function SignUp(): ReactElement {
     const [username, setUsernameState] = useState('');
     const [email, setEmailState] = useState('');
@@ -18,26 +18,30 @@ export default function SignUp(): ReactElement {
     };
 
     return (
-        <div className="form-style-5">
+        <div className="container1">
             <form>
                 <fieldset>
-                    <label>username</label>
+                    <div className="username">
+                    <label>Username</label>
                     <input type="text" name="username" onChange={(e)=>{
                     setUsernameState(e.target.value)}}
                     />
-
-                    <label>email</label>
+                    </div>
+                    <div className="email">
+                    <label>Email</label>
                     <input type="text" name="email" onChange={(e)=>{
                     setEmailState(e.target.value)}}
                     />
-
+                    </div>
+                    <div className="password">
                     <label>Password</label>
                     <input type="text" name="title" onChange={(e)=>{
                     setPasswordState(e.target.value)}}
                     />
-                    
-
+                    </div>
+                        <div className="register">
                 <button onClick={handleSubmit}>Register</button>
+                </div>
                 </fieldset>
             </form>
             <hr></hr>

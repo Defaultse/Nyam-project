@@ -17,11 +17,13 @@
     background-color: #e66a6a; 
 }
 .email{ 
+    margin-top: 25px;
     font-style: normal;
     font-weight: bold;
 }
 
 .password{
+    display: block;
     margin-top: 25px;
     font-style: normal;
     font-weight: bold;
