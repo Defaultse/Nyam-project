@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
-
+import React, { ReactElement } from 'react'; 
+import './Recipes.css'; 
 interface Props {
     title?: string,
     calories?: string,
@@ -9,7 +9,7 @@ interface Props {
 
 export default function Recipe({title, calories, image, ingredients}: Props): ReactElement {
     return (
-        <div>
+        <div className = 'recipe'>
             <h1>{title}</h1>
             <ol> 
                 {ingredients.map(ingredient =>(
@@ -19,7 +19,7 @@ export default function Recipe({title, calories, image, ingredients}: Props): Re
                 ))}
             </ol> 
             <p>{calories}</p>
-            <img src={image}></img>
+            <img className ='image'src={image}></img>
         <hr/>
         </div>
     )

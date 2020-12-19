@@ -28,11 +28,12 @@ export default function Recipes(): ReactElement {
     }
 
     return (
-        <div>
-            <form onSubmit={getSearch}>
-                <input type="text" value={search} onChange={(e)=>setSearch(e.target.value)}/>
-                <button type="submit">Search</button>
+        <div className='Recipes'>
+            <form className= 'search-form 'onSubmit={getSearch}>
+                <input className = 'search-bar' type="text" value={search} onChange={(e)=>setSearch(e.target.value)}/>
+                <button className = 'search-buttom' type="submit">Search</button>
             </form>
+            <div className='container'>
             {recipes.map(recipe => (
                 <Recipe 
                 key={recipe.recipe.label}
@@ -42,6 +43,7 @@ export default function Recipes(): ReactElement {
                 ingredients= {recipe.recipe.ingredients}
                 />
             ))}
+            </div>
         </div>
     )
 }

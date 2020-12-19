@@ -1,30 +1,39 @@
-/* .nav{
-    display: flex;
-    width: 100%;
-    height: 10vh;
-    background: rgb(99, 98, 94);
+.navbar-brand { 
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 150px; 
+    font-size: 24px;
+    line-height: 29px;
 }
 
-li{
-    color: white;
-    font-family: Arial, Helvetica;
-    font-weight: 700;
+
+.navbar-toggler{
+    color: #DDAF94;
 }
 
-li:hover{
-    color: gray;
+.navbar-brand{
+    color:#e66a6a; 
+}
+.navbar-nav{
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 26px;
+color: #FDF8F5;
+
 }
 
-.nav ul{
-    display: flex;
-    flex: 1 0 auto;
-    padding: 0;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
+.nav-item{
+    margin-left: 35px;
+    color:#e66a6a; 
 }
 
-.nav a{
-    text-decoration: none;
+.nav-item-sign{
+    margin-left: 564px;
+    color:#e66a6a; 
 }
- */
+
+.nav-item-new{
+    margin-left: 45px; 
+    color:#e66a6a; 
+}

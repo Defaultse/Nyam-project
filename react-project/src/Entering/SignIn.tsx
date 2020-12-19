@@ -33,29 +33,33 @@ export default function SignInState(): ReactElement {
     }, [])
 
     return(
-        <>
-        <div className="form-style-5">
-            <form>
+        
+        <div className='container1'>
+            
                 <fieldset>
-                    <label>email</label>
+                    <div className="email">
+                    <label>Email</label>
                     <input type="text" name="email" onChange={(e)=>{
                     setEmailState(e.target.value)}}
                     ref={email}/>
-
+                    </div>
+                    <div className="password">
                     <label>Password</label>
                     <input type="text" name="title" onChange={(e)=>{
                     setPasswordState(e.target.value)}}
                     ref={password}/>
+                    </div>
                     
 
-                <button onClick={login}>Submit</button>
+                <button className ="submit" onClick={login}>Submit</button>
                 </fieldset>
-            </form>
-            <hr></hr>
-
+       
+            
+            <div className="create">
             <Link to="/sign-up" ><strong>Create account</strong></Link>
+            </div>
         </div>
-        </>
+        
     )
     
 }; 
