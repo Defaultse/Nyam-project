@@ -15,7 +15,7 @@ export default function Craigslist(): ReactElement {
              id:2, idSeller: 22324, title: "Smartphone", price: 400000, discription:"Brand new Apple", sold: false
         },
 
-    ]
+    ] 
 
     const [productList, setProductList] = useState<any[]>([])
 

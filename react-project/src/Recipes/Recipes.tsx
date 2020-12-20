@@ -1,3 +1,4 @@
+import Axios from 'axios';
 import React, { ReactElement, useEffect, useMemo, useState } from 'react'
 import { ObjectFlags } from 'typescript';
 import Recipe from './Recipe';
@@ -12,15 +13,18 @@ export default function Recipes(): ReactElement {
     const [query, setQuery] = useState("chicken");
 
     useEffect(()=>{ 
-       getRecepies();
-    }, [query])
+        Axios.get('https://api.edamam.com/search?q='+query+'&app_id='+APP_ID+'&app_key='+APP_KEY).then((response: { data: any; })=>{
+            console.log(response) 
+        setRecipes(response.data.hits);
+            console.log(response.data)    })
+    },[query])
 
-    const getRecepies = async() => {
+    /*const getRecepies = async() => {
         const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
         const data = await response.json();
         setRecipes(data.hits);
         console.log(data.hits);
-    }
+    }*/
 
     const getSearch = (e:any) => {
         e.preventDefault();
