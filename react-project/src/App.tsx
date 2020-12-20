@@ -12,6 +12,7 @@ import AddProduct from './AddProduct/AddProduct';
 import Craigslist from './Craigslist/Craigslist';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Favorites from './Favorites/Favorites';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path='/add-product' exact component={AddProduct}/>
         <Route path='/recipes' exact component={Recipes}/>
         <Route path='/profile' exact component={Profile}/>
+        <Route path='/favorites' exact component={Favorites}/>
       </Switch>
 
       </>

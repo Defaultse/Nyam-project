@@ -48,8 +48,10 @@ app.get('/api/get', (req,res) => {
 
 app.post('/api/get/product', (req,res) => {
     const product_id = req.body.product_id;
+    console.log("Id: "+product_id)
     const sqlGet = "SELECT * FROM products_table WHERE id=?";
-    console.log('ok')
+    console.log('ok '+product_id)
+    
     db.query(sqlGet, [product_id], (err, result)=>{
         res.send(result)
         console.log(result)

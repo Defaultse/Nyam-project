@@ -7,6 +7,12 @@ interface Props {
 }
 
 export default function LotDetail({match}: Props): ReactElement {
+    // const lots = [
+    //     {
+    //         id: match.params.id, idSeller: 2324, title: "Bicycle", price: 40000, discription:"Brand new bicycle", sold: false
+    //     }
+    // ]
+
     const [productDetails, setProductDetails] = useState<any>([]);
 
     useEffect(()=>{
@@ -21,8 +27,6 @@ export default function LotDetail({match}: Props): ReactElement {
         var old = JSON.parse(localStorage.getItem('favorites') || '{}');
         old.push(productDetails.id);
         localStorage.setItem('favorites', JSON.stringify(old))
-        // alert()
-        // console.log(JSON.parse(localStorage.getItem('favorites') || '{}'))
     }
 
     return (
@@ -33,24 +37,14 @@ export default function LotDetail({match}: Props): ReactElement {
         <p>Description:{productDetails.description}</p>
         <p>Owner: {productDetails.owner_id}</p>
         <button onClick={addToFav}>Add to Favorite</button>
-
-        {/* <div className="container">
-            {
-                productDetails.map(product=>{
-                    if(product.id==product_id && product.is_sold!==true) 
-                return(
-                <div>
-                    {match.params.id}
-                <h3>Product id:{product.id}</h3>
-                <h1>Title: {product.title}</h1>
-                <p>Price: {product.price}</p>
-                <p>Description:{product.description}</p>
-                <p>Owner: {product.owner_id}</p>
-                </div>)
-                })
-            }
-        </div> */}
         </>
-
+        // <>
+        // <h3>Product id:{lots.id}</h3>
+        // <h1>Title: {lots.title}</h1>
+        // <p>Price: {lots.price}</p>
+        // <p>Description:{lots.description}</p>
+        // <p>Owner: {lots.owner_id}</p>
+        // <button onClick={addToFav}>Add to Favorite</button>
+        // </>
     )
 }

@@ -10,6 +10,7 @@ const loggedReducer = (
 
             case Logged.SIGN_OUT:
                 localStorage.removeItem('account');
+                localStorage.removeItem('favorites');
                 return false;
             
             default:
