@@ -19,32 +19,33 @@ export default function SignUp(): ReactElement {
 
     return (
         <div className="container1">
-            <form>
-                <fieldset>
-                    <div className="username">
-                    <label>Username</label>
-                    <input type="text" name="username" onChange={(e)=>{
+             <div className="header">Register</div>
+            
+                <fieldset className ="fieldset">
+                   
+                    <label className="username">Username</label>
+                    <input className ="input" type="text" name="username" onChange={(e)=>{
                     setUsernameState(e.target.value)}}
                     />
-                    </div>
+                  
                     <div className="email">
-                    <label>Email</label>
-                    <input type="text" name="email" onChange={(e)=>{
+                    <label className="email" >Email</label>
+                    <input className ="input" type="text" name="email" onChange={(e)=>{
                     setEmailState(e.target.value)}}
                     />
                     </div>
                     <div className="password">
-                    <label>Password</label>
-                    <input type="text" name="title" onChange={(e)=>{
+                    <label className="password">Password</label>
+                    <input className ="input" type="text" name="title" onChange={(e)=>{
                     setPasswordState(e.target.value)}}
                     />
                     </div>
-                        <div className="register">
-                <button onClick={handleSubmit}>Register</button>
-                </div>
+                        
+                <button onClick={handleSubmit} className="submit" >Register</button>
+                
                 </fieldset>
-            </form>
-            <hr></hr>
+         
+            
         </div>
     )
 }

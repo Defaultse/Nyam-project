@@ -10,15 +10,15 @@ interface Props {
 export default function Recipe({title, calories, image, ingredients}: Props): ReactElement {
     return (
         <div className = 'recipe'>
-            <h1>{title}</h1>
-            <ol> 
+            <h1 className="title">{title}</h1>
+            <ol className="ingredients"> 
                 {ingredients.map(ingredient =>(
-                    <li>
+                    <li className="ingredients">
                         {ingredient.text}
                     </li>
                 ))}
             </ol> 
-            <p>{calories}</p>
+            
             <img className ='image'src={image}></img>
         <hr/>
         </div>

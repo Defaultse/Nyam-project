@@ -7,15 +7,15 @@ import './Craigslist.css'
 import ErrorBoundary from '../ErrorBoundary';
 
 export default function Craigslist(): ReactElement {
-    // const lots = [
-    //     {
-    //         id:1, idSeller: 2324, title: "Bicycle", price: 40000, discription:"Brand new bicycle", sold: false
-    //     },
-    //     {
-    //         id:2, idSeller: 22324, title: "Smartphone", price: 400000, discription:"Brand new Apple", sold: false
-    //     },
+     const lots = [
+         {
+             id:1, idSeller: 2324, title: "Bicycle", price: 40000, discription:"Brand new bicycle", sold: false
+         },
+        {
+             id:2, idSeller: 22324, title: "Smartphone", price: 400000, discription:"Brand new Apple", sold: false
+        },
 
-    // ]
+    ]
 
     const [productList, setProductList] = useState<any[]>([])
 

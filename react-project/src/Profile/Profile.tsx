@@ -3,6 +3,7 @@ import React, { ReactElement, useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import Lot from '../Craigslist/Lot';
 import ErrorBoundary from '../ErrorBoundary';
+import "./Profile.css"
 
 export default function Profile(): ReactElement {
     const account = JSON.parse(localStorage.getItem('account')||'{}');
@@ -21,20 +22,19 @@ export default function Profile(): ReactElement {
 
     return (
         <>
-            <div>
-                <h3>Profile info</h3>
-                <h5>Your email:{account.email}</h5>
-                <p>Account id:{account.id}</p>
-            </div>
-            <hr/>
-            <div>
-                <h3>Your lots:</h3>
+            <div className = "info">
+                
+                <h3 className="profile">Profile info:</h3>
+                <h5 className = "email"> Your email:{account.email}</h5>
+                <p className = "id">Account id:{account.id}</p>
+                <h3 className = "lots">Your lots:</h3>
                 <div className="container">
                     <ErrorBoundary>
                         {lotList}
                     </ErrorBoundary>
                 </div>
             </div>
+            <hr/>
             
         </>
     )

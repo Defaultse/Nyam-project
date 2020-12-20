@@ -1,5 +1,6 @@
 .Recipes{
-    background: #e66a6a; 
+    background-color:#3498DB;
+    
     
 }
 
@@ -8,29 +9,38 @@
     display: flex;
     justify-content: center; 
     align-items: center; 
+    background-color: #3498DB ; 
+
+
 }
 
 .search-bar{
     width: 50%; 
-    border: none;
+    box-shadow: black;
     padding: 10px; 
+    background: white;
+    display: 30px;
 }
 
 .search-buttom{
-    background: lightcoral;
-    border: none; 
-    padding: 10px 20px; 
-    color: white; 
+    box-shadow: black;
+    background:black;
+    border: black; 
+    padding: 10px; 
+    color: white;  display: 30px;
 }
 
 .container {
     display: 30px;
     justify-content: space-around;
     flex-wrap: wrap;
+;
+    background-color:#3498DB; 
+    
+ 
 }
 .recipe {
     border-radius: 25px;
-    box-shadow: 0px 5px 20px rgb(71, 70, 70);
     margin: 30px; 
     display: flex; 
     flex-direction: column;
@@ -38,10 +48,18 @@
     background: white;
     align-items: center;
     min-width: 40%; 
+    
 }
 
 .image {
     border-radius: 50%;
     width:100px;
     height: 100px;
+}
+
+.title{
+    background-color: white;
+}
+.ingredients{
+    background-color: white;
 }
