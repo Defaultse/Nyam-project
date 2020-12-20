@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { Logged } from '../reducers/Logged';
 
-// import './Navbar.css';
+import './Navbar.css';
 
 
 export default function NavBar(): ReactElement {
@@ -17,21 +17,21 @@ export default function NavBar(): ReactElement {
         <span className="navbar-toggler-icon"></span>
         </button>
 
-  <div className="collapse navbar-collapse" id="navbarNavDropdown">
+ 
     <ul className="navbar-nav">
-        <Link className="nav-item" to="/" ><li>List</li></Link>
-        <Link className="nav-item" to="/recipes"><li>New Recipes</li></Link>
-        <Link className="nav-item" to="/favorites"><li>Favorites</li></Link>
-        {logged===true ? (
+        <Link  to="/" ><li className="nav-item">List</li></Link>
+        <Link  to="/recipes"><li className="nav-item">New Recipes</li></Link>
+        <Link  to="/favorites"><li className="nav-item">Favorites</li></Link>
+     
           <>
-          <Link className="nav-item" to="/add-product"><li>Add Product</li></Link>
-          <Link className="nav-item" to="/profile"><li>Profile</li></Link>
-          <Link onClick={()=>dispatch({type: Logged.SIGN_OUT})} className="nav-item" to="/sign-in"><li>Sign Out</li></Link></>
-        ) : (
-          <Link className="nav-item" to="/sign-in"><li>Sign in</li></Link>
-        ) }
+          <Link className="nav-item" to="/add-product"><li className="nav-item">Add Product</li></Link>
+          <Link className="nav-item" to="/profile"><li className="nav-item">Profile</li></Link>
+          <Link onClick={()=>dispatch({type: Logged.SIGN_OUT})} className="nav-item" to="/sign-in"><li className="nav-item">Sign Out</li></Link></>
+      
+          <Link to="/sign-in"><li className="nav-item">Sign in</li></Link>
+    
   </ul>
-  </div>
+  
 </nav>
     )
 }

@@ -1,41 +1,94 @@
-*{
-    background-color: lightcoral;
+* {
+  background-color: #3498db;
 }
 
-.container1{ 
-    position: absolute; 
-    display: flex; 
-    margin-left: 169px;
-    margin-top: 35px;
-    /* background-color: white; */
+.container1 {
+  
+  border-radius: 25px;
+  position: absolute;
+
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  height: 400px;
+  display: flex;
+  margin-left: 250px;
+  margin-top: 75px;
+  background-color: white;
 }
 
-.fieldset{
-    margin-right: 25px;
+.fieldset {
+  background-color: white;
+  margin-right: 25px;
 }
 
-.main{
-    background-color: #e66a6a; 
+.main {
+  background-color: white;
 }
-.email{ 
-    font-style: normal;
-    font-weight: bold;
-}
-
-.password{
-    margin-top: 25px;
-    font-style: normal;
-    font-weight: bold;
+.email {
+  margin-left: 15px;
+  background-color: white;
+  margin-top: 10px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
 }
 
-.submit{
-    margin-top: 25px;
-    font-style: normal;
-    font-weight: bold;
+.password {
+  margin-left: 0px;
+  background-color: white;
+  margin-top: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
 }
 
-.create{
-    margin-top: 150px;
-    font-style: normal;
-    font-weight: bold;
+.submit {
+  font-size: 17px;
+  width: 100px;
+  height: 25px;
+  margin-left: 185px;
+  margin-top: 10px;
+  font-weight: normal;
+  color: black;
+  background-color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+}
+
+.create {
+  margin-left: 25px;
+  background-color: white;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: bold;
+}
+.input {
+  margin-left: 25px;
+  margin-top: 6px;
+  min-width: 18em;
+  height: 37px;
+  padding: 0px 10px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f3f3f3;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 31px;
+  transition: all 250ms ease-in-out;
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 14px 0.3px #0e81ce96;
+}
+
+.header {
+  margin-left: 25px;
+  font-weight: bold;
+  margin-top: 25px;
+  background-color: white;
+  font-size: 24px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.dont {
+  margin-top: 25px;
+  margin-left: 50px;
+  background-color: white;
 }

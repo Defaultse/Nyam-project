@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
-
+import './SignUp.css'
 export default function SignUp(): ReactElement {
     const [username, setUsernameState] = useState('');
     const [email, setEmailState] = useState('');
@@ -18,29 +18,34 @@ export default function SignUp(): ReactElement {
     };
 
     return (
-        <div className="form-style-5">
-            <form>
-                <fieldset>
-                    <label>username</label>
-                    <input type="text" name="username" onChange={(e)=>{
+        <div className="container1">
+             <div className="header">Register</div>
+            
+                <fieldset className ="fieldset">
+                   
+                    <label className="username">Username</label>
+                    <input className ="input" type="text" name="username" onChange={(e)=>{
                     setUsernameState(e.target.value)}}
                     />
-
-                    <label>email</label>
-                    <input type="text" name="email" onChange={(e)=>{
+                  
+                    <div className="email">
+                    <label className="email" >Email</label>
+                    <input className ="input" type="text" name="email" onChange={(e)=>{
                     setEmailState(e.target.value)}}
                     />
-
-                    <label>Password</label>
-                    <input type="text" name="title" onChange={(e)=>{
+                    </div>
+                    <div className="password">
+                    <label className="password">Password</label>
+                    <input className ="input" type="text" name="title" onChange={(e)=>{
                     setPasswordState(e.target.value)}}
                     />
-                    
-
-                <button onClick={handleSubmit}>Register</button>
+                    </div>
+                        
+                <button onClick={handleSubmit} className="submit" >Register</button>
+                
                 </fieldset>
-            </form>
-            <hr></hr>
+         
+            
         </div>
     )
 }

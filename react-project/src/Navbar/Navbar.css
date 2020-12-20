@@ -1,39 +1,46 @@
 .navbar-brand { 
+
     font-style: normal;
     font-weight: bold;
     margin-left: 150px; 
     font-size: 24px;
-    line-height: 29px;
+    font-family: "Open Sans", sans-serif;
+}
+.nav{
+    background-color: white;
 }
 
-
 .navbar-toggler{
-    color: #DDAF94;
+    color:white;
 }
 
 .navbar-brand{
-    color:#e66a6a; 
+    color:white; 
+}
+.collapse-navbar-collapse{
+    background-color: white;
 }
 .navbar-nav{
 font-style: normal;
 font-weight: bold;
 font-size: 24px;
 line-height: 26px;
-color: #FDF8F5;
+background: white;
 
 }
 
 .nav-item{
-    margin-left: 35px;
-    color:#e66a6a; 
+    margin-left: 30px;
+    background:white; 
+    font-family: "Open Sans", sans-serif;
 }
 
 .nav-item-sign{
     margin-left: 564px;
-    color:#e66a6a; 
+    color:white; 
 }
 
 .nav-item-new{
-    margin-left: 45px; 
-    color:#e66a6a; 
+    margin-left: 0px; 
+    color:white; 
 }

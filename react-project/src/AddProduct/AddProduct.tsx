@@ -65,13 +65,13 @@ export default function AddProduct({}: Props): ReactElement {
     return (
             <form className="container">
                 <div className="form-group">
-                    <label>Title</label>
+                    <label className = "pew">Title</label>
                     <input className="form-control" type="text" name="title" onChange={(e)=>{
                     setProductTitle(e.target.value)}}
                     ref={title}/>
                 </div>
                 <div className="form-group">
-                    <label>Set category</label>
+                    <label className = "pew">Set category</label>
                     <select className="form-control" onChange={(e)=>{
                     setProductCategory(e.target.value)
                      }}>
@@ -81,13 +81,13 @@ export default function AddProduct({}: Props): ReactElement {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label>Price</label>
+                    <label  className = "pew">Price</label>
                     <input className="form-control" type="text" name="price" onChange={(e)=>{
                     setProductPrice(e.target.value)}}
                     ref={price}/>
                 </div>
                 <div className="form-group">
-                    <label>Description</label>
+                    <label  className = "pew">Description</label>
                     <textarea className="form-control" name="description" onChange={(e)=>{
                     setProductDescription(e.target.value);}}
                      />

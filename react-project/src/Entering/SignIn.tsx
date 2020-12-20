@@ -35,28 +35,29 @@ export default function SignInState(): ReactElement {
     return(
         
         <div className='container1'>
-            
-                <fieldset>
+            <div className="header">Sign in</div>
+            <fieldset className = "fieldset">
                     <div className="email">
-                    <label>Email</label>
-                    <input type="text" name="email" onChange={(e)=>{
+                    <label className="email"> Email</label>
+                    <input className ="input" type="text" name="email" onChange={(e)=>{
                     setEmailState(e.target.value)}}
                     ref={email}/>
                     </div>
                     <div className="password">
-                    <label>Password</label>
-                    <input type="text" name="title" onChange={(e)=>{
+                    <label  className="password">Password</label>
+                    <input className ="input"type="text" name="title" onChange={(e)=>{
                     setPasswordState(e.target.value)}}
                     ref={password}/>
                     </div>
                     
 
-                <button className ="submit" onClick={login}>Submit</button>
+                <button className ="submit" onClick={login}>Login</button>
                 </fieldset>
+                <div className="dont">Dont have Account?</div>
        
             
             <div className="create">
-            <Link to="/sign-up" ><strong>Create account</strong></Link>
+            <Link to="/sign-up" ><strong className="create">Create account</strong></Link>
             </div>
         </div>
         
