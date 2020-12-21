@@ -9,7 +9,9 @@ interface Props {
 
 export default function Recipe({title, calories, image, ingredients}: Props): ReactElement {
     return (
+        <>
         <div className = 'recipe'>
+            <img className ='image'src={image}></img>
             <h1 className="title">{title}</h1>
             <ol className="ingredients"> 
                 {ingredients.map(ingredient =>(
@@ -18,9 +20,8 @@ export default function Recipe({title, calories, image, ingredients}: Props): Re
                     </li>
                 ))}
             </ol> 
-            
-            <img className ='image'src={image}></img>
-        <hr/>
         </div>
+        <hr style={{height:'3px', backgroundColor: '#333'}}/>
+        </>
     )
 }

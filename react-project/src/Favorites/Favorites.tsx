@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { ReactElement, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import Lot from '../Craigslist/Lot';
+import Lot from '../LotsList/Lot';
 import ErrorBoundary from '../ErrorBoundary';
 
 export default function Favorites(): ReactElement {
@@ -29,12 +29,11 @@ export default function Favorites(): ReactElement {
         )
     },[]);
     
-    const lotList = productList.map(lot=><Link to={`lots/${lot.id}`}><Lot key={lot.id} lot={lot}></Lot></Link>)
+    const lotList = productList.map(lot=><Link to={`lots/${lot.id}`}><Lot key={lot.id} lot={lot} userId={""}></Lot></Link>)
     
     return (
         
         <div>
-            {console.log(productList)}
             <ErrorBoundary>
                 {lotList}
             </ErrorBoundary>

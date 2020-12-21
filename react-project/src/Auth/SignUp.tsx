@@ -1,7 +1,8 @@
 import React, { ReactElement, useState } from 'react'
 import Axios from 'axios'
-import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
 import './SignUp.css'
+
 export default function SignUp(): ReactElement {
     const [username, setUsernameState] = useState('');
     const [email, setEmailState] = useState('');
@@ -41,7 +42,7 @@ export default function SignUp(): ReactElement {
                     />
                     </div>
                         
-                <button onClick={handleSubmit} className="submit" >Register</button>
+                <Button onClick={handleSubmit} className="submit" >Register</Button>
                 
                 </fieldset>
          

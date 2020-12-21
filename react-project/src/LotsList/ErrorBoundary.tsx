@@ -12,8 +12,9 @@ export default class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return "Seems like API is closed. Try later!";
+      return "Server-side problems!";
     }
+
     return this.props.children;
   }
 

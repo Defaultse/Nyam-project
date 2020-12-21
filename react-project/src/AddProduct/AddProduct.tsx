@@ -1,25 +1,20 @@
 import React, { ReactElement, useState, useRef, useEffect } from 'react'
 import Axios from 'axios';
 
-import './AddProduct.css';
-
-interface Props {
-    
-}
-
 interface Product{
     title: string,
     description: string,
     price: number
 }
 
-export default function AddProduct({}: Props): ReactElement {
+export default function AddProduct(): ReactElement {
     const account = JSON.parse(localStorage.getItem('account')||'{}');
     
     const [productTitle, setProductTitle] = useState("")
     const [productCategory, setProductCategory] = useState("")
     const [productPrice, setProductPrice] = useState("")
     const [productDescription, setProductDescription] = useState("")
+    // const [selectedFile, setSelectedFile] = useState(null);
 
     const handleSubmit = () => {
         Axios.post("http://localhost:3001/api/insert", {
@@ -29,6 +24,7 @@ export default function AddProduct({}: Props): ReactElement {
             productCategory: productCategory,
             productPrice: productPrice,
             productDescription: productDescription,
+            // productImage: fd
     });
     };
 
@@ -39,7 +35,7 @@ export default function AddProduct({}: Props): ReactElement {
           validated=false;
           title.current?.focus()
         }
-        if(productDescription.length>30==true){
+        if(productDescription.length>100){
           alert("Re-enter description")
           validated=false;
           description.current?.focus()
@@ -49,6 +45,7 @@ export default function AddProduct({}: Props): ReactElement {
             validated=false;
             price.current?.focus()
         }
+
         if(validated){
             handleSubmit();
         }
@@ -62,16 +59,20 @@ export default function AddProduct({}: Props): ReactElement {
         title.current?.focus();
     }, [])
 
+    // function fileSelectedhandler(event){
+    //     setSelectedFile(event.target.files[0])
+    // }
+
     return (
             <form className="container">
                 <div className="form-group">
-                    <label className = "pew">Title</label>
+                    <label className="pew">Title</label>
                     <input className="form-control" type="text" name="title" onChange={(e)=>{
                     setProductTitle(e.target.value)}}
                     ref={title}/>
                 </div>
                 <div className="form-group">
-                    <label className = "pew">Set category</label>
+                    <label className="pew">Set category</label>
                     <select className="form-control" onChange={(e)=>{
                     setProductCategory(e.target.value)
                      }}>
@@ -81,7 +82,7 @@ export default function AddProduct({}: Props): ReactElement {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label  className = "pew">Price</label>
+                    <label className = "pew">Price</label>
                     <input className="form-control" type="text" name="price" onChange={(e)=>{
                     setProductPrice(e.target.value)}}
                     ref={price}/>
@@ -92,8 +93,10 @@ export default function AddProduct({}: Props): ReactElement {
                     setProductDescription(e.target.value);}}
                      />
                 </div>
+                <div className="form-group">
+                    <input type="file"/>
+                </div>
                 <button className="btn btn-secondary" onClick={()=>validateInput()}>Submit</button>
-
             </form>
     )
 }

@@ -1,9 +1,8 @@
-* {
+/* * {
   background-color: #3498db;
-}
+} */
 
 .container1 {
-  
   border-radius: 25px;
   position: absolute;
 
@@ -42,24 +41,19 @@
 }
 
 .submit {
-  font-size: 17px;
-  width: 100px;
-  height: 25px;
-  margin-left: 185px;
+  margin-left: 205px;
   margin-top: 10px;
-  font-weight: normal;
-  color: black;
-  background-color: #ffffff;
   font-family: "Open Sans", sans-serif;
 }
 
 .create {
-  margin-left: 25px;
+  margin-left: 30px;
   background-color: white;
   margin-top: 0px;
   font-style: normal;
   font-weight: bold;
 }
+
 .input {
   margin-left: 25px;
   margin-top: 6px;
@@ -89,6 +83,6 @@
 
 .dont {
   margin-top: 25px;
-  margin-left: 50px;
+  margin-left: 30px;
   background-color: white;
 }

@@ -1,5 +1,5 @@
 .Recipes{
-    background-color:#3498DB;
+    /* background-color:#3498DB; */
     
     
 }
@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center; 
     align-items: center; 
-    background-color: #3498DB ; 
+    /* background-color: #3498DB ;  */
 
 
 }
@@ -35,7 +35,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
 ;
-    background-color:#3498DB; 
+    /* background-color:#3498DB;  */
     
  
 }
@@ -52,14 +52,13 @@
 }
 
 .image {
-    border-radius: 50%;
-    width:100px;
-    height: 100px;
+    border-radius: 5%;
 }
 
 .title{
     background-color: white;
 }
+
 .ingredients{
     background-color: white;
 }
