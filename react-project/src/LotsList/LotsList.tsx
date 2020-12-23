@@ -20,7 +20,7 @@ export default function LotsList(): ReactElement {
     return (
       <>
       <Carousel/>
-      <GridList cols={3} cellHeight={'auto'}>
+      <GridList cols={4} cellHeight={'auto'} style={{marginTop: '10px'}}>
           {lotList}
       </GridList>
       </>      

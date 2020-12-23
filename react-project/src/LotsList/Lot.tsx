@@ -28,8 +28,8 @@ export default function Lot({lot, userId}:Props): ReactElement {
     });}
 
     return(
-        <div className="card mb-3" style={{maxWidth: '400px', margin:'30px'}}>
-            <img src="/images/demo.jpg" className="card-img-top" style={{width: '80%', textAlign:'center' }} alt="..."/>
+        <div className="card mb-3" style={{maxWidth: '350px', marginLeft:'15px'}}>
+            <img src="/images/demo.jpg" className="card-img-top" style={{width: '100%', textAlign:'center'}} alt="..."/>
             <div className="card-body">
                 <h5 className="card-title">{lot.title}</h5>
                 <p className="card-text">{lot.price}KZT</p>

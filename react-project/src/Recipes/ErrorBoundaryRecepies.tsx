@@ -1,4 +1,5 @@
 import React, { Component, ErrorInfo } from "react";
+import ErrorPage from "./ErrorPage";
 
 interface Props {}
 interface State {
@@ -12,7 +13,7 @@ export default class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return "Seems like API is closed. Try later!";
+      return <ErrorPage />;
     }
     return this.props.children;
   }

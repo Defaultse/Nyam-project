@@ -1,5 +1,5 @@
 .Recipes{
-    /* background-color:#3498DB; */
+    background-color: #808080;
     
     
 }
@@ -10,8 +10,6 @@
     justify-content: center; 
     align-items: center; 
     /* background-color: #3498DB ;  */
-
-
 }
 
 .search-bar{
@@ -34,11 +32,9 @@
     display: 30px;
     justify-content: space-around;
     flex-wrap: wrap;
-;
     /* background-color:#3498DB;  */
-    
- 
 }
+
 .recipe {
     border-radius: 25px;
     margin: 30px; 
@@ -52,6 +48,7 @@
 }
 
 .image {
+    padding-top: 10px;
     border-radius: 5%;
 }
 

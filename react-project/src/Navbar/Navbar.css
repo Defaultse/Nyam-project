@@ -1,14 +1,10 @@
 .navbar-brand { 
-
     font-style: normal;
     font-weight: bold;
-    margin-left: 150px; 
-    font-size: 24px;
-    font-family: "Open Sans", sans-serif;
+    margin-left: 130px; 
+    font-family: 'Brush Script MT', cursive;
 }
-.nav{
-    background-color: white;
-}
+
 
 .navbar-toggler{
     color:white;
@@ -17,22 +13,23 @@
 .navbar-brand{
     color:white; 
 }
+
 .collapse-navbar-collapse{
     background-color: white;
 }
-.navbar-nav{
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 26px;
-background: white;
 
+.navbar-nav{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 26px;
 }
 
 .nav-item{
     margin-left: 30px;
-    background:white; 
-    font-family: "Open Sans", sans-serif;
+    color:black; 
+    font-family: Impact, fantasy;
+    font-size: 25px;
 }
 
 .nav-item-sign{

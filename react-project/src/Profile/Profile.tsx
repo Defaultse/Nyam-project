@@ -5,6 +5,8 @@ import Lot from '../LotsList/Lot';
 import ErrorBoundary from '../ErrorBoundary';
 import "./Profile.css"
 import Modal from './Modal';
+import Button from 'react-bootstrap/esm/Button';
+import { GridList } from '@material-ui/core';
 
 export default function Profile(): ReactElement {
     const account = JSON.parse(localStorage.getItem('account')||'{}');
@@ -24,28 +26,34 @@ export default function Profile(): ReactElement {
     return (
         <>
             <div className="info" style={{zIndex: 1}}>
-                <h3 className="profile">Profile info:</h3>
-                <h5 className="email"> Your email:{account.email}</h5>
-                <p className="id">Account id:{account.id}</p>
-                <hr/>
-                <h3 className="lots">Your lots:</h3>
-                { 
-                productList.length > 0 ? 
-                <div className="container">
-                <ErrorBoundary>
-                    {lotList}
-                </ErrorBoundary>
+                <div className="profile-side">
+                    <img src="https://www.jetphotos.com/assets/img/user.png"/>
+                    <h3 className="profile">Profile info:</h3>
+                    <h5 className="email"> Your email:{account.email}</h5>
+                    <p className="id">Account id:{account.id}</p>
+                    <hr/>
+                    <Button variant="primary" size="lg" block onClick={()=>setIsOpen(true)}>delete account</Button>
+                    <Modal open={isOpen} onClose={()=>setIsOpen(false)}>Changed</Modal>
                 </div>
-                :
-                <>
-                <h5>It's empty</h5>
-                <Link to="/add-product">Want to start selling?</Link>
-                </>
-                }
-            <div>
-                <button onClick={()=>setIsOpen(true)}>delete account</button>
-                <Modal open={isOpen} onClose={()=>setIsOpen(false)}>Changed</Modal>
-            </div>
+
+                <div className="lots-side">
+                    <h3 className="lots">Your products:</h3>
+                    { 
+                    productList.length > 0 ? 
+                    <div>
+                    <ErrorBoundary>
+                    <GridList cols={2} cellHeight={'auto'} style={{marginTop: '10px'}}>
+                        {lotList}
+                    </GridList>
+                    </ErrorBoundary>
+                    </div>
+                    :
+                    <>
+                    <h5>It's empty</h5>
+                    <Link to="/add-product">Want to start selling?</Link>
+                    </>
+                    }
+                </div>
             </div>
         </>
     )

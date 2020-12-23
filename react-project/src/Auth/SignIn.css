@@ -5,13 +5,12 @@
 .container1 {
   border-radius: 25px;
   position: absolute;
-
   flex-direction: column;
   align-items: center;
   width: 800px;
   height: 400px;
   display: flex;
-  margin-left: 250px;
+  margin-left: 330px;
   margin-top: 75px;
   background-color: white;
 }

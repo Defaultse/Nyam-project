@@ -12,11 +12,10 @@ export default function NavBar(): ReactElement {
 
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">Nyam Nyam</a>
+        <a className="navbar-brand" href="/">Nyam-Project</a>
 
     <ul className="navbar-nav">
         <Link to="/" ><li className="nav-item">List</li></Link>
-        {/* <Link to="/recipes"><li className="nav-item">New Recipes</li></Link> */}
         {logged===true ?
         <>
           <Link to="/favorites"><li className="nav-item">Favorites</li></Link>
