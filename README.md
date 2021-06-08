@@ -1,3 +1,3 @@
 # Nyam-project
 
-reactTS + NodeJS + MySQL
+reactTS + NodeJS
